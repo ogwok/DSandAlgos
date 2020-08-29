@@ -107,4 +107,18 @@ class LinkedList {
 
         return temp;
     }
+    reverse(){
+        let temp = this.head;
+        this.head = this.tail;
+        this.tail = temp;
+        let prev = null;
+        let next;
+        for (let i = 0; i < this.length; i++){
+            next = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = next;
+        }
+        return this;
+    }
 }
