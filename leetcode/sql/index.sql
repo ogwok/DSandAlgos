@@ -12,3 +12,7 @@ SELECT DISTINCT author_id AS id FROM Views WHERE viewer_id = author_id ORDER BY 
 
 -- 1683. Invalid Tweets
 SELECT tweet_id FROM Tweets WHERE length(content)>15
+
+1378. Replace Employee ID With The Unique Identifier
+SELECT u.unique_id, e.name FROM EmployeeUNI u RIGHT JOIN Employees e ON u.id = e.id
+
