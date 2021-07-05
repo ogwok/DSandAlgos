@@ -13,6 +13,8 @@ SELECT DISTINCT author_id AS id FROM Views WHERE viewer_id = author_id ORDER BY 
 -- 1683. Invalid Tweets
 SELECT tweet_id FROM Tweets WHERE length(content)>15
 
-1378. Replace Employee ID With The Unique Identifier
+-- 1378. Replace Employee ID With The Unique Identifier
 SELECT u.unique_id, e.name FROM EmployeeUNI u RIGHT JOIN Employees e ON u.id = e.id
 
+-- 1068. Product Sales Analysis I
+SELECT p.product_name, s.year, s.price FROM Sales s LEFT JOIN Product p on s.product_id = p.product_id
