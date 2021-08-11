@@ -18,3 +18,10 @@ SELECT u.unique_id, e.name FROM EmployeeUNI u RIGHT JOIN Employees e ON u.id = e
 
 -- 1068. Product Sales Analysis I
 SELECT p.product_name, s.year, s.price FROM Sales s LEFT JOIN Product p on s.product_id = p.product_id
+
+-- 1581. Customer Who Visited but Did Not Make Any Transactions
+SELECT v.customer_id, COUNT(*) count_no_trans
+FROM Visits v LEFT JOIN Transactions t 
+ON v.visit_id = t.visit_id
+WHERE t.transaction_id IS NULL
+GROUP BY v.customer_id
